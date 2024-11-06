@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TECHMASTERCURSOS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto+Slab:wght@500&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+            border: 0px;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            display: grid;
+            grid-template-areas:
+                'header'
+                'inicio'
+                'jornada'
+                'cursos'
+                'contato'
+                'rodape';
+
+            grid-template-columns: 100%;
+            grid-template-rows: auto 100vh 100vh auto 60vh auto;
+            background-color: #ccc;
+        }
+
+        .header {
+            height: 15vh;
+            width: 100%;
+            grid-area: header;
+            display: flex;
+            justify-content: space-between;
+            flex-direction: row;
+            align-items: center;
+            background-color: #228B22;
+            position: fixed;
+            border: solid;
+            border-bottom-color: #fff;
+            z-index: 999;
+
+        }
+
+        .imgheader {
+            display: flex;
+            justify-content: center;
+            height: 10vh;
+            width: 12vw;
+            z-index: 999;
+        }
+
+        .logoimg {
+            height: 10vh;
+            width: 17vh;
+
+        }
+
+        .suporte {
+            display: flex;
+            width: 40vw;
+            height: 5vh;
+            align-items: center;
+            justify-content: space-around;
+        }
+
+        .header a {
+            color: #fff;
+            font-family: 'Roboto Slab', serif;
+            font-size: 1.8em;
+            text-decoration: none;
+        }
+
+        .header a:hover {
+            text-decoration: underline;
+            color: #ccc;
+
+        }
+
+        .inicio {
+            display: flex;
+            grid-area: inicio;
+            justify-content: center;
+            align-items: center;
+            background-image: url("img/fundo.jpeg");
+            background-size: cover;
+
+        }
+
+        .txtinicio {
+            color: white;
+            font-size: 3em;
+            font-family: 'Roboto Slab', serif;
+            z-index: 998;
+        }
+
+        .imginicio {
+            width: 100%;
+            height: 85vh;
+        }
+
+        .jornada {
+            grid-area: jornada;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10%;
+
+        }
+
+        .jornadatxt {
+            display: flex;
+            width: 40%;
+            color: #000;
+            font-family: 'Roboto Slab', serif;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 1em;
+
+        }
+
+        .jornada_tilt {
+            font-size: 2em;
+        }
+
+        .jornada_txt {
+            font-size: 1em;
+            text-align: justify;
+
+        }
+
+        .img-container {
+            width: 30%;
+        }
+
+        .img-container img {
+            width: 100%;
+        }
+
+        #cursos {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            grid-area: cursos;
+            background-image: linear-gradient(to top, #228B22, #168616);
+            background-attachment: fixed;
+            padding: 10% 0%;
+
+
+
+
+        }
+
+        .dif {
+            margin: 5% 0%;
+
+        }
+
+        .select {
+            display: flex;
+            justify-content: end;
+            align-items: center;
+            flex-direction: row;
+            gap: 1%;
+            width: 95%;
+
+        }
+
+        .select label {
+            color: #fff;
+            font-size: 1.8em;
+            font-family: 'Roboto Slab', serif;
+
+        }
+
+        .select select {
+            width: 20vh;
+            height: 4vh;
+            font-size: 1.5em;
+            font-family: 'Roboto Slab', serif;
+        }
+
+        .curso_design {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+            list-style: none;
+            flex-wrap: wrap;
+            margin-bottom: 3%;
+
+
+        }
+
+        .curso_design img:hover {
+            border: solid 2px #fff;
+
+
+        }
+
+        .curso_back_end img:hover {
+            border: solid 2px #fff;
+
+        }
+
+        .curso_front_end img:hover {
+            border: solid 2px #fff;
+
+        }
+
+        .curso_design p {
+            display: flex;
+            justify-content: center;
+            font-size: 2em;
+            color: white;
+        }
+
+        .curso_design img {
+            border-radius: 5%;
+            width: 287px;
+            height: 378px;
+        }
+
+        .tilt_cursos {
+            display: flex;
+            justify-content: center;
+            color: #fff;
+            font-size: 3.5em;
+            text-decoration: underline;
+            font-family: 'Roboto Slab', serif;
+
+        }
+
+        .sub_tilt {
+            display: flex;
+            justify-content: center;
+            font-size: 1.8em;
+            color: #fff;
+        }
+
+        .curso_front_end {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+            list-style: none;
+            flex-wrap: wrap;
+            margin-bottom: 3%;
+        }
+
+        .curso_front_end img {
+            border-radius: 5%;
+            width: 287px;
+            height: 378px;
+
+        }
+
+        .curso_front_end p {
+            display: flex;
+            justify-content: center;
+            font-size: 2em;
+            color: white;
+        }
+
+        .curso_back_end {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+            list-style: none;
+            margin-bottom: 3%;
+        }
+
+        .curso_back_end img {
+            border-radius: 5%;
+            width: 287px;
+            height: 378px;
+        }
+
+        .curso_back_end p {
+            display: flex;
+            justify-content: center;
+            font-size: 2em;
+            color: white;
+        }
+
+        .contato {
+            display: flex;
+            grid-area: contato;
+            background-color: #ccc;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+        }
+
+        .cont_box {
+            display: flex;
+            flex-direction: column;
+            width: 25%;
+            gap: 1.25em;
+
+        }
+
+        .tilt_ctt {
+            display: flex;
+            font-family: 'Roboto Slab', serif;
+            font-size: 1.8em;
+            color: #000;
+            width: 100%;
+            height: 5vh;
+            justify-content: center;
+        }
+
+        .cont_box label {
+            font-size: 1.8em;
+            color: #228B22;
+        }
+
+        .cont_box button {
+
+            width: 10vw;
+            height: 3vh;
+            border: 1px solid #6c8def;
+            border-radius: 10px;
+        }
+
+        .cont_box input {
+            border: 1px solid black;
+            padding: 1em;
+        }
+
+        .ctt_name {
+            height: 5vh;
+            border-radius: 10px;
+        }
+
+        .ctt_e-mail {
+            height: 5vh;
+            border-radius: 10px;
+        }
+
+        .ctt_msg {
+            height: 20vh;
+            border-radius: 10px;
+            border: 1px solid black;
+            padding: 1em;
+
+        }
+
+        .rodape {
+            grid-area: rodape;
+            background-color: #228B22;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+            height: 25vh;
+
+        }
+
+        .container_footer {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            width: 70vw;
+            height: 80%;
+        }
+
+        .img_footer img {
+            height: 135px;
+
+        }
+
+        .tdr_footer {
+            color: #fff;
+            font-size: 1em;
+
+            display: flex;
+            align-items: end;
+            padding-bottom: 10px;
+
+        }
+
+        .txt_footer img {
+            width: 30px;
+            height: 30px;
+        }
+
+        .txt_footer {
+            list-style: none;
+            display: flex;
+            flex-direction: row;
+            color: #fff;
+            font-size: 1em;
+        }
+
+        .txt_footer li {
+            gap: 1em;
+            margin-bottom: 0.5em;
+            display: flex;
+            flex-direction: row;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                display: grid;
+                grid-template-areas:
+                    'header'
+                    'inicio'
+                    'jornada'
+                    'cursos'
+                    'contato'
+                    'rodape';
+
+                grid-template-columns: 100%;
+                grid-template-rows: auto 100vh 100vh auto 60vh auto;
+            }
+
+            .header {
+                height: 20vh;
+                display: flex;
+                justify-content: space-around;
+                flex-direction: column;
+
+            }
+
+            .inicio {
+                height: 100vh;
+            }
+
+            .txtinicio {
+                font-size: 1.2em;
+
+            }
+
+            .suporte {
+                width: 100%;
+            }
+
+            .jornada {
+                flex-direction: column;
+            }
+
+            .jornadatxt {
+                width: 90%;
+            }
+
+            .img-container {
+                width: 50%;
+                height: 50%;
+            }
+
+            .curso {
+                display: flex;
+
+            }
+
+            .curso_design {
+                display: flex;
+                flex-direction: column;
+
+            }
+
+            .curso_design img {
+                width: 164px;
+                height: 216px;
+                border-radius: 0%;
+                margin-right: 2em;
+                margin-bottom: 2em;
+
+            }
+
+            .curso_design li {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+
+            }
+
+            .curso_design div {
+                display: flex;
+                flex-direction: column;
+                width: 35vw;
+            }
+
+            .curso_front_end {
+                display: flex;
+                flex-direction: column;
+
+
+
+            }
+
+            .curso_front_end img {
+                width: 164px;
+                height: 216px;
+                border-radius: 0%;
+                margin-right: 2em;
+                margin-bottom: 2em;
+
+
+            }
+
+            .curso_front_end li {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+
+            }
+
+            .curso_front_end div {
+                display: flex;
+                flex-direction: column;
+                width: 35vw;
+            }
+
+            .curso_back_end {
+                display: flex;
+                flex-direction: column;
+
+
+
+            }
+
+            .curso_back_end img {
+                width: 164px;
+                height: 216px;
+                border-radius: 0%;
+                margin-right: 2em;
+                margin-bottom: 2em;
+
+
+            }
+
+            .curso_back_end li {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+
+
+            }
+
+            .curso_back_end div {
+                display: flex;
+                flex-direction: column;
+                width: 35vw;
+            }
+
+            .select label {
+                font-size: 1em;
+            }
+
+            .select select {
+                width: 15vh;
+                height: 2.5vh;
+                font-size: 0.78em;
+            }
+
+            .tilt_ctt {
+                font-size: 1.2em;
+            }
+
+            .cont_box label {
+                font-size: 1.3em;
+            }
+
+            .cont_box {
+                width: 60%;
+
+            }
+
+            .cont_box button {
+                width: 100%;
+            }
+
+            .rodape {
+                height: 40vh;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                gap: 2em;
+
+            }
+
+            .container_footer {
+                display: flex;
+                align-items: center;
+                width: 100%;
+                flex-direction: column;
+                justify-content: center;
+                gap: 2em;
+                text-align: center;
+            }
+
+            .tdr_footer {
+                font-size: 0.8em;
+
+
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="imgheader">
+                <img src="img/001DA1 - Copia.png" class="logoimg">
+            </div>
+            <div class="suporte">
+                <a href="#">Home</a>
+
+                <a href="#sobre">Sobre</a>
+
+                <a href="#cursos">Cursos</a>
+
+                <a href="#contato">Contato</a>
+            </div>
+
+        </div>
+        <div class="inicio">
+
+
+            <div class="txtinicio">
+                <p>Bem-vindo ao TechMasterCursos</p>
+            </div>
+
+
+        </div>
+
+        <div class="jornada" id="sobre">
+            <div class="jornadatxt">
+                <h2 class="jornada_tilt">Sobre Nós</h2>
+                <p class="jornada_txt">
+                    Descubra um mundo de oportunidades educacionais em nosso site dedicado à venda de cursos de alta
+                    qualidade.
+                    Seja você um iniciante ansioso para mergulhar em um novo campo de estudo ou um profissional buscando
+                    aprimorar.
+                    suas habilidades, estamos aqui para guiar você em cada passo do caminho.
+                </p>
+            </div>
+            <div class="img-container">
+                <img src="img/Innovation-bro.svg" alt="TechMasterCursos">
+            </div>
+
+        </div>
+        <div id="cursos">
+            <p class="tilt_cursos">Cursos</p>
+            <form class="dif">
+                <div class="select">
+                    <label for="sel">Filtre por:</label><br>
+                    <select name="sel" id="sel">
+                        <option value="Design">Desing</option>
+                        <option value="Front-End">Front-End</option>
+                        <option value="Back-End">Back-End</option>
+                    </select>
+                </div>
+            </form>
+            <ul class="curso_design">
+                <li>
+                    <img src="img/corel-draw-graphics-suite.jpg">
+                    <div>
+                        <p>CorelDraw</p>
+                        <h1 class="sub_tilt">Design</h1>
+                    </div>
+                </li>
+                <li>
+                    <img src="img/figma.jpg">
+                    <div>
+                        <p>Figma</p>
+                        <h1 class="sub_tilt">Design</h1>
+                    </div>
+                </li>
+                <li>
+                    <img src="img/photoshop.jpg">
+                    <div>
+                        <p>Photoshop</p>
+                        <h1 class="sub_tilt">Design</h1>
+                    </div>
+                </li>
+                <li>
+                    <img src="img/adobe-illustrator.jpg">
+                    <div>
+                        <p>Illustrator</p>
+                        <h1 class="sub_tilt">Design</h1>
+                    </div>
+                </li>
+            </ul>
+            <ul class="curso_front_end">
+                <li>
+                    <img src="img/html-5.jpg">
+                    <div>
+                        <p>Html</p>
+                        <h1 class="sub_tilt">Front-End</h1>
+                    </div>
+                </li>
+                <li>
+                    <img src="img/css-3.jpg">
+                    <div>
+                        <p>Css</p>
+                        <h1 class="sub_tilt">Front-End</h1>
+                        <div>
+                </li>
+                <li>
+                    <img src="img/javascript.jpg">
+                    <div>
+                        <p>Java Script</p>
+                        <h1 class="sub_tilt">Front-End</h1>
+                    </div>
+                </li>
+                <li>
+                    <img src="img/jquery.jpg">
+                    <div>
+                        <p>jQuery</p>
+                        <h1 class="sub_tilt">Front-End</h1>
+                    </div>
+                </li>
+            </ul>
+            <ul class="curso_back_end">
+                <li>
+                    <img src="img/java.jpg">
+                    <div>
+                        <p>Java</p>
+                        <h1 class="sub_tilt">Back-End</h1>
+                    </div>
+                </li>
+                <li>
+                    <img src="img/python.jpg">
+                    <div>
+                        <p>Python</p>
+                        <h1 class="sub_tilt">Back-End</h1>
+                    </div>
+                </li>
+                <li>
+                    <img src="img/mysql.jpg">
+                    <div>
+                        <p>MySQL</p>
+                        <h1 class="sub_tilt">Back-End</h1>
+                    </div>
+                </li>
+                <li>
+                    <img src="img/php.jpg">
+                    <div>
+                        <p>PHP</p>
+                        <h1 class="sub_tilt">Back-End</h1>
+                    </div>
+                </li>
+
+            </ul>
+        </div>
+        <div class="contato" id="contato">
+            <p class="tilt_ctt">Está com Algum Problema? Fale conosco</p>
+            <form class="cont_box">
+                <label for="ctt">Insira seus dados: </label>
+                <input type="text" placeholder="Nome" maxlength="100" name="ctt" class="ctt_name">
+                <input type="text" placeholder="E-mail" maxlength="100" name="ctt" class="ctt_e-mail">
+                <textarea name="ctt" id="ctt" cols="30" rows="10" placeholder="Mensagem" class="ctt_msg"></textarea>
+                <button>Enviar</button>
+
+            </form>
+        </div>
+        <div class="rodape">
+            <div class="container_footer">
+                <div class="img_footer">
+                    <img src="img/001DA1.png">
+                </div>
+
+                <div class="txt_footer">
+                    <ul>
+                        <li>
+                            <img src="img/instagram.png">
+                            <p>TechMasterCursos</p>
+                        </li>
+                        <li>
+                            <img src="img/telefone.png">
+                            <p>99999-9999</p>
+                        </li>
+                        <li>
+                            <img src="img/e-mail.png">
+                            <p>TechMasterCursos@gmail.com</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <p class="tdr_footer">TechMasterCursos © 2023 - Todos os direitos reservados - Proteção de Dados</p>
+        </div>
+
+    </div>
+    <script>
+
+    </script>
+
+</body>
+
+</html>
