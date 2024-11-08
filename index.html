@@ -59,7 +59,7 @@
             z-index: 999;
         }
         .imgheader img {
-            width: 5vw;
+            width: 100px;
             z-index: 999;
         }
         .logoimg {
@@ -151,6 +151,7 @@
         }
 
         #cursos {
+            width: 100vw;
             display: flex;
             flex-direction: column;
             justify-content: space-evenly;
@@ -158,9 +159,8 @@
             background-image: linear-gradient(to top, #228B22, #168616);
             background-attachment: fixed;
             padding: 10% 0%;
-
-
-
+            flex-direction: column;
+            
 
         }
 
@@ -176,6 +176,7 @@
             flex-direction: row;
             gap: 1%;
             width: 95%;
+
 
         }
 
@@ -197,12 +198,22 @@
             display: flex;
             flex-direction: row;
             justify-content: space-around;
-            align-items: center;
+            align-items: start;
             list-style: none;
+            gap: 3vw;
             flex-wrap: wrap;
             margin-bottom: 3%;
-
-
+            flex-direction: column;
+        }
+        .divcont {
+            width: 80vw;
+            float: right;
+            height: 30vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+            gap: 5%;
         }
 
         .curso_design img:hover {
@@ -224,7 +235,7 @@
         .curso_design p {
             display: flex;
             justify-content: center;
-            font-size: 2em;
+            font-size: 1.8em;
             color: white;
         }
 
@@ -238,7 +249,7 @@
             display: flex;
             justify-content: center;
             color: #fff;
-            font-size: 3.5em;
+            font-size: 2em;
             text-decoration: underline;
             font-family: 'Roboto Slab', serif;
 
@@ -247,11 +258,13 @@
         .sub_tilt {
             display: flex;
             justify-content: center;
-            font-size: 1.8em;
+            font-size: 1.4em;
             color: #fff;
+            font-weight: normal;
         }
 
         .curso_front_end {
+            
             display: flex;
             flex-direction: row;
             justify-content: space-around;
@@ -267,7 +280,8 @@
             height: 378px;
 
         }
-
+        
+        
         .curso_front_end p {
             display: flex;
             justify-content: center;
@@ -284,7 +298,6 @@
             list-style: none;
             margin-bottom: 3%;
         }
-
         .curso_back_end img {
             border-radius: 5%;
             width: 287px;
@@ -436,12 +449,14 @@
                 height: 20vh;
                 display: flex;
                 justify-content: space-around;
+                align-items: center;
                 flex-direction: column;
 
             }
 
             .inicio {
                 height: 100vh;
+
             }
 
             .txtinicio {
@@ -451,7 +466,8 @@
 
             .suporte {
                 width: 100%;
-            }
+                font-size: 0.8em;
+                }
 
             .jornada {
                 flex-direction: column;
@@ -629,7 +645,7 @@
 
                 <a href="#sobre">Sobre</a>
 
-                <a href="#cursos">Dicas</a>
+                <a href="#cursos">Funcionalidades</a>
 
                 <a href="#contato">Contato</a>
             </div>
@@ -639,7 +655,7 @@
 
 
             <div class="txtinicio">
-                <p>Bem-vindo ao TechMasterCursos</p>
+                <p>Bem-vindo ao Ecolink</p>
             </div>
 
 
@@ -658,108 +674,38 @@
 
         </div>
         <div id="cursos">
-            <p class="tilt_cursos">Cursos</p>
-            <form class="dif">
-                <div class="select">
-                    <label for="sel">Filtre por:</label><br>
-                    <select name="sel" id="sel">
-                        <option value="Design">Desing</option>
-                        <option value="Front-End">Front-End</option>
-                        <option value="Back-End">Back-End</option>
-                    </select>
-                </div>
-            </form>
+            <p class="tilt_cursos">Funcionalidades</p>
             <ul class="curso_design">
                 <li>
                     <img src="img/corel-draw-graphics-suite.jpg">
-                    <div>
-                        <p>CorelDraw</p>
-                        <h1 class="sub_tilt">Design</h1>
+                    <div class="divcont">
+                        <p>Recycle Nation -</p>
+                        <h1 class="sub_tilt">Localiza centros de reciclagem próximo</h1>
                     </div>
                 </li>
                 <li>
-                    <img src="img/figma.jpg">
-                    <div>
-                        <p>Figma</p>
-                        <h1 class="sub_tilt">Design</h1>
+                    <img src="img/corel-draw-graphics-suite.jpg">
+                    <div class="divcont">
+                        <p>EcoCRED -</p>
+                        <h1 class="sub_tilt">Plataforma para reduzir pegada de carbono com desafios e ações sustentáveis    .</h1>
                     </div>
                 </li>
                 <li>
-                    <img src="img/photoshop.jpg">
-                    <div>
-                        <p>Photoshop</p>
-                        <h1 class="sub_tilt">Design</h1>
+                    <img src="img/corel-draw-graphics-suite.jpg">
+                    <div class="divcont">
+                        <p>Too Good To Go -</p>
+                        <h1 class="sub_tilt">Focado em reduzir o desperdício de alimento</h1>
                     </div>
                 </li>
                 <li>
-                    <img src="img/adobe-illustrator.jpg">
-                    <div>
-                        <p>Illustrator</p>
-                        <h1 class="sub_tilt">Design</h1>
-                    </div>
-                </li>
-            </ul>
-            <ul class="curso_front_end">
-                <li>
-                    <img src="img/html-5.jpg">
-                    <div>
-                        <p>Html</p>
-                        <h1 class="sub_tilt">Front-End</h1>
-                    </div>
-                </li>
-                <li>
-                    <img src="img/css-3.jpg">
-                    <div>
-                        <p>Css</p>
-                        <h1 class="sub_tilt">Front-End</h1>
-                        <div>
-                </li>
-                <li>
-                    <img src="img/javascript.jpg">
-                    <div>
-                        <p>Java Script</p>
-                        <h1 class="sub_tilt">Front-End</h1>
-                    </div>
-                </li>
-                <li>
-                    <img src="img/jquery.jpg">
-                    <div>
-                        <p>jQuery</p>
-                        <h1 class="sub_tilt">Front-End</h1>
+                    <img src="img/corel-draw-graphics-suite.jpg">
+                    <div class="divcont">
+                        <p>iHuerting -</p>
+                        <h1 class="sub_tilt">Um assistente de jardinagem urbana</h1>
                     </div>
                 </li>
             </ul>
-            <ul class="curso_back_end">
-                <li>
-                    <img src="img/java.jpg">
-                    <div>
-                        <p>Java</p>
-                        <h1 class="sub_tilt">Back-End</h1>
-                    </div>
-                </li>
-                <li>
-                    <img src="img/python.jpg">
-                    <div>
-                        <p>Python</p>
-                        <h1 class="sub_tilt">Back-End</h1>
-                    </div>
-                </li>
-                <li>
-                    <img src="img/mysql.jpg">
-                    <div>
-                        <p>MySQL</p>
-                        <h1 class="sub_tilt">Back-End</h1>
-                    </div>
-                </li>
-                <li>
-                    <img src="img/php.jpg">
-                    <div>
-                        <p>PHP</p>
-                        <h1 class="sub_tilt">Back-End</h1>
-                    </div>
-                </li>
-
-            </ul>
+            
         </div>
         <div class="contato" id="contato">
             <p class="tilt_ctt">Está com Algum Problema? Fale conosco</p>
@@ -782,7 +728,7 @@
                     <ul>
                         <li>
                             <img src="img/instagram.png">
-                            <p>MeioAmbiente</p>
+                            <p>Ecolink</p>
                         </li>
                         <li>
                             <img src="img/telefone.png">
@@ -790,12 +736,12 @@
                         </li>
                         <li>
                             <img src="img/e-mail.png">
-                            <p>MeioAmbiente@gmail.com</p>
+                            <p>Ecolink@gmail.com</p>
                         </li>
                     </ul>
                 </div>
             </div>
-            <p class="tdr_footer">MeioAmbiente © 2024 - Todos os direitos reservados - Proteção de Dados</p>
+            <p class="tdr_footer">Ecolink © 2024 - Todos os direitos reservados - Proteção de Dados</p>
         </div>
 
     </div>
